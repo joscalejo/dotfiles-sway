@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "spacing": 4,
+    
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["clock"],
+	"modules-right": ["tray", "network", "pulseaudio", "battery"],
+
+	"tray": {
+    "icon-size": 18,
+    "spacing": 10
+	},
+	
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "sway/window": {
+        "max-length": 50
+    },
+    "clock": {
+        "format": " {:%H:%M   %d/%m}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "⚠ Desconectado",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Mute",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    }
+}

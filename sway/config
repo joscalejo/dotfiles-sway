@@ -29,8 +29,17 @@ include /etc/sway/config-vars.d/*
 #  ESTRUSTURA VISUAL (OPCIÓN B: PIXEL BORDER)
 # ==============================================================================
 # Elimina las barras de título y deja un borde fino de 2 píxeles
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 4
+default_floating_border pixel 4
+# ==============================================================================
+#  COLORES DE LOS BORDES DE LAS VENTANAS (CATPPUCCIN MOCHA)
+# ==============================================================================
+# Clase             Borde   Fondo   Texto   Indicad. Borde_Hijo
+client.focused         #094293 #1e1e2e #cdd6f4 #b4befe  #89b4fa
+client.focused_inactive #45475a #1e1e2e #a6adc8 #45475a  #45475a
+client.unfocused       #313244 #1e1e2e #a6adc8 #313244  #313244
+client.urgent          #f38ba8 #1e1e2e #1e1e2e #f38ba8  #f38ba8
+
 
 # Ocultar bordes cuando solo hay una ventana abierta (Maximiza el espacio)
 hide_edge_borders smart
@@ -136,28 +145,18 @@ bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Imágenes/Screenshot_$(date +%Y%m
 
 
 # ==============================================================================
-#  BARRA DE ESTADO ESTÉTICA (CATPPUCCIN THEME)
+#  AUTOTILING (EFECTO ESPIRAL / FIBONACCI)
+# ==============================================================================
+exec_always autotiling
+
+
+exec nm-applet --indicator
+
+# ==============================================================================
+#  BARRA DE ESTADO (WAYBAR)
 # ==============================================================================
 bar {
-    position top
-    # Comando simple para la hora y fecha
-    status_command while date +'%A, %d de %B  |  %H:%M:%S'; do sleep 1; done
-
-    # Configuración de apariencia de la barra
-    font pango:FiraCode Nerd Font 10
-    height 28
-
-    colors {
-        # Color del texto de la hora y fondo de la barra
-        statusline #cdd6f4
-        background #1e1e2e
-
-        # Estilo de los escritorios (Fondo / Borde / Texto)
-        focused_workspace  #89b4fa #89b4fa #1e1e2e
-        active_workspace   #45475a #45475a #cdd6f4
-        inactive_workspace #1e1e2e #1e1e2e #a6adc8
-        urgent_workspace   #f38ba8 #f38ba8 #1e1e2e
-    }
+    swaybar_command waybar
 }
 
 
