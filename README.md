@@ -33,3 +33,20 @@ sudo apt update
 
 # 2. Instalar todos los componentes y dependencias necesarias
 sudo apt install -y sway waybar kitty swaybg autotiling network-manager-gnome blueman wget unzip
+
+# Crear la carpeta .config si no existe
+mkdir -p ~/.config
+
+# Enlazar las configuraciones de mi repositorio local
+ln -sf ~/dotfiles/sway ~/.config/sway
+ln -sf ~/dotfiles/kitty ~/.config/kitty
+ln -sf ~/dotfiles/waybar ~/.config/waybar
+
+#Fonts
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget [https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip)
+unzip FiraCode.zip
+rm FiraCode.zip
+fc-cache -fv # Fuerza la actualización del caché de fuentes del sistema
+```
