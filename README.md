@@ -1,23 +1,35 @@
-# 🦅 Mi Entorno Sway en Parrot OS
+# 🌌 Mi Entorno Personalizado en Sway (Parrot OS)
 
-Repositorio personal con mis archivos de configuración (*dotfiles*) para el gestor de ventanas **Sway** (Wayland), optimizado para flujos de trabajo ágiles y navegación fluida.
+Este repositorio contiene mis archivos de configuración personales (`dotfiles`) para estructurar un entorno de escritorio (ricing) ultra ligero, estético y eficiente, optimizado para flujos de trabajo de ciberseguridad.
 
-## 🛠️ Características Principales
-- **Base:** Parrot OS 7.2 (Debian Bookworm).
-- **Terminal:** Kitty.
-- **Lanzador:** Wofi (modo drun con iconos).
-- **Estilo Visual:** Bordes finos de 2px sin barra de títulos estorbosas.
-- **Teclado:** Distribución Español Latinoamericano (`latam`).
+---
 
-## ⌨️ Atajos de Teclado Clave (Binds)
-- `Mod + Enter` -> Abrir Terminal (Kitty)
-- `Mod + D` -> Menú de aplicaciones (Wofi)
-- `Mod + F` -> Lanzar Firefox
-- `Mod + Shift + Q` -> Cerrar ventana enfocada
-- `Mod + Shift + S` -> Captura de pantalla de área seleccionada (Grim + Slurp)
-- `Mod + Shift + C` -> Recargar configuración de Sway
+## 🛠️ Componentes del Sistema (Lista de Dependencias)
 
-## 🚀 Navegación y Control
-- Movimiento de enfoque entre ventanas mediante teclas estilo **Vim** (`H`, `J`, `K`, `L`).
-- Modo de mosaico (*Tiling*) puro y directo.
-- Ajustes de audio con `Mod + Ctrl + Flechas` y brillo con `Mod + Shift + Flechas`.
+Para que este entorno funcione idéntico en cualquier instalación limpia, se deben instalar los siguientes paquetes:
+
+### 1. El Núcleo (Administración de Ventanas)
+* **`sway`**: El gestor de ventanas por tiling basado en Wayland.
+* **`autotiling`**: Demonio en Python que automatiza la división de ventanas siguiendo la proporción áurea (Secuencia de Fibonacci).
+
+### 2. Estética e Interfaz
+* **`waybar`**: Barra de estado moderna basada en JSON y CSS (Reemplaza a `swaybar`).
+* **`kitty`**: Emulador de terminal acelerado por GPU, con soporte para transparencias.
+* **`swaybg`**: Herramienta nativa para gestionar fondos de pantalla en Wayland.
+
+### 3. Herramientas de Control (Interactividad)
+* **`network-manager-gnome`**: Proporciona el applet visual (`nm-applet`) y el editor gráfico de conexiones para el WiFi.
+* **`blueman`**: Gestor gráfico completo para emparejar y administrar dispositivos Bluetooth (`blueman-manager`).
+
+---
+
+## 🚀 Guía de Instalación Rápida
+
+Si estás en una instalación limpia de Parrot OS o Debian, ejecuta los siguientes comandos para descargar todas las herramientas de un solo golpe:
+
+```bash
+# 1. Actualizar los repositorios del sistema
+sudo apt update
+
+# 2. Instalar todos los componentes y dependencias necesarias
+sudo apt install -y sway waybar kitty swaybg autotiling network-manager-gnome blueman wget unzip
