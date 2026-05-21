@@ -134,20 +134,34 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Captura de área seleccionada directa a tu carpeta de Imágenes (Súper + Shift + S)
 bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Imágenes/Screenshot_$(date +%Y%m%d_%H%M%S).png
 
+
 # ==============================================================================
-#  BARRA DE ESTADO
+#  BARRA DE ESTADO ESTÉTICA (CATPPUCCIN THEME)
 # ==============================================================================
 bar {
     position top
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # Comando simple para la hora y fecha
+    status_command while date +'%A, %d de %B  |  %H:%M:%S'; do sleep 1; done
+
+    # Configuración de apariencia de la barra
+    font pango:FiraCode Nerd Font 10
+    height 28
 
     colors {
-        statusline #ffffff
-        background #222222
-        focused_workspace #4c7899 #285577 #ffffff
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        # Color del texto de la hora y fondo de la barra
+        statusline #cdd6f4
+        background #1e1e2e
+
+        # Estilo de los escritorios (Fondo / Borde / Texto)
+        focused_workspace  #89b4fa #89b4fa #1e1e2e
+        active_workspace   #45475a #45475a #cdd6f4
+        inactive_workspace #1e1e2e #1e1e2e #a6adc8
+        urgent_workspace   #f38ba8 #f38ba8 #1e1e2e
     }
 }
 
+
 # Incluir configuraciones del sistema
 include /etc/sway/config.d/*
+
+exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
