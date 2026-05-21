@@ -4,7 +4,7 @@
 
 * {
     font-family: "FiraCode Nerd Font", sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 0;
@@ -48,6 +48,10 @@ window#waybar {
     border-radius: 8px;
     background-color: #313244;
     color: #cdd6f4;
+}
+
+#battery.charging {
+    color: #a6e3a1; /* Verde pastel de Catppuccin */
 }
 
 #battery.charging {

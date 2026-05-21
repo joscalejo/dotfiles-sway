@@ -31,8 +31,8 @@ include /etc/sway/config-vars.d/*
 #  ESTRUSTURA VISUAL (OPCIÓN B: PIXEL BORDER)
 # ==============================================================================
 # Elimina las barras de título y deja un borde fino de 2 píxeles
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 2
+default_floating_border pixel 2
 # ==============================================================================
 #  COLORES DE LOS BORDES DE LAS VENTANAS (CATPPUCCIN MOCHA)
 # ==============================================================================
@@ -57,7 +57,7 @@ bindsym $mod+f exec firefox
 
 ### GESTIÓN DE VENTANAS (MODO TILING PURO)
 bindsym $mod+w kill
-bindsym $mod+Shift+c reload exec killall waybar; waybar &
+bindsym $mod+Shift+c reload
 
 # Dirección de la división para la siguiente ventana
 bindsym $mod+b splith
