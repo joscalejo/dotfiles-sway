@@ -1,3 +1,5 @@
+
+
 # ==============================================================================
 #  CONFIGURACIÓN PERSONALIZADA DE SWAY - PARROT OS (WAYLAND)
 # ==============================================================================
@@ -55,7 +57,7 @@ bindsym $mod+f exec firefox
 
 ### GESTIÓN DE VENTANAS (MODO TILING PURO)
 bindsym $mod+w kill
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload exec killall waybar; waybar &
 
 # Dirección de la división para la siguiente ventana
 bindsym $mod+b splith
@@ -150,6 +152,7 @@ bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Imágenes/Screenshot_$(date +%Y%m
 exec_always autotiling
 
 
+exec blueman-applet
 exec nm-applet --indicator
 
 # ==============================================================================

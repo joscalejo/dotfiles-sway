@@ -41,7 +41,8 @@ window#waybar {
 #network,
 #pulseaudio,
 #window,
-#tray {
+#tray,
+#bluetooth {
     padding: 0 12px;
     margin: 4px 4px;
     border-radius: 8px;
